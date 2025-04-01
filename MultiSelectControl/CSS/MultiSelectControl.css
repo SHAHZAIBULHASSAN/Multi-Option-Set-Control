@@ -1,0 +1,97 @@
+/* Root CSS Variables for Theming */
+:root {
+    --primary-color: #0078d4; /* Microsoft Blue */
+    --hover-color: #005a9e; /* Darker Blue for Hover */
+    --error-color: #e81123; /* Red for Errors */
+    --background-color: #ffffff; /* White Background */
+    --text-color: #333333; /* Dark Gray Text */
+    --border-radius: 4px; /* Rounded Corners */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+}
+
+/* Main Container */
+.multiselect-container {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    border: 1px solid #cccccc;
+    border-radius: var(--border-radius);
+    padding: 16px;
+    box-shadow: var(--box-shadow);
+    max-width: 400px;
+    margin: 16px auto;
+}
+
+/* Unordered List Styling */
+.ks-cboxtags {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space Between Items */
+}
+
+/* List Item Styling */
+.ks-cboxtags li {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space Between Checkbox and Label */
+}
+
+/* Checkbox Styling */
+.ks-cboxtags input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.ks-cboxtags input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.ks-cboxtags input[type="checkbox"]:checked::after {
+    content: "✔";
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.ks-cboxtags input[type="checkbox"]:hover {
+    border-color: var(--hover-color);
+}
+
+/* Label Styling */
+.ks-cboxtags label {
+    font-size: 14px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.ks-cboxtags label:hover {
+    color: var(--hover-color);
+}
+
+/* Error Label Styling */
+.error-label {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid var(--error-color);
+    border-radius: var(--border-radius);
+    background-color: rgba(232, 17, 35, 0.1); /* Light Red Background */
+    display: none; /* Hidden by Default */
+}
+
+.error-label.visible {
+    display: block; /* Show When Error Occurs */
+}
